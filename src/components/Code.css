@@ -1,0 +1,20 @@
+#Code {
+  text-align: left;
+}
+
+.static-imports {
+  padding: 0 14px;
+  margin: 0;
+}
+
+.static-imports .cm-keyword {
+  color: #708;
+}
+
+.static-imports .cm-def {
+  color: #00f;
+}
+
+.static-imports .cm-string {
+  color: #a11;
+}
