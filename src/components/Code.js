@@ -17,13 +17,17 @@ class Code extends Component {
 
   render() {
     const { runCode, setCode } = this.props.actions;
-    const { code } = this.props;
+    const { challenges, code } = this.props;
+    const { challenge } = challenges;
 
     return (
       <div className="Code" onKeyDown={this.runOnCmdEnter.bind(this)}>
-        <StaticCode />
+        {/*<StaticCode />*/}
+        <p>{challenge.description}</p>
         <CodeMirror value={code.src} onChange={setCode} />
-        <a onClick={() => runCode(code.src)}>Run</a>
+        <CodeMirror value={challenge.suiteDisplay} />
+        <a onClick={() => runCode(challenge.code)}>Run</a>
+        <a onClick={() => setCode(challenge.answer)}>Show Answer</a>
       </div>
     );
   }

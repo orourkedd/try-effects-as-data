@@ -5,6 +5,20 @@ export function setCode (src) {
   }
 }
 
+export function setSpec (src) {
+  return {
+    type: 'setSpec',
+    src
+  }
+}
+
+export function setAnswer (src) {
+  return {
+    type: 'setAnswer',
+    src
+  }
+}
+
 export function setOutput (output) {
   return {
     type: 'setOutput',

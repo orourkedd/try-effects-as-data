@@ -1,6 +1,7 @@
 import { mergeAll } from 'ramda';
 import * as localStorageHandlers from './local-storage';
 import * as evalCodeHandlers from './eval-code';
+import * as specHandlers from './run-specs';
 import buildReduxHandlers from './redux';
 
 export default (store) => {
@@ -8,6 +9,7 @@ export default (store) => {
   return mergeAll([
     localStorageHandlers,
     evalCodeHandlers,
-    reduxHandlers
+    reduxHandlers,
+    specHandlers
   ]);
 }

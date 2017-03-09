@@ -1,0 +1,8 @@
+.Output.output-success {
+
+}
+
+.Output.output-failure {
+  background-color: red;
+  color: #fff;
+}

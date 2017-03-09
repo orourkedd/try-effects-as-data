@@ -5,7 +5,7 @@ import { run } from 'effects-as-data';
 
 export default (store) => {
   const handlers = buildHandlers(store);
-  
+
   const promisifyPair = ([name, fn]) => {
     const pFn = function (payload) {
       return run(handlers, fn, payload, { name, onFailure: console.error });

@@ -18,3 +18,17 @@ export function reduxDispatch (reduxAction) {
     reduxAction
   }
 }
+
+export function runSpecs (suite, fn) {
+  return {
+    type: 'runSpecs',
+    suite,
+    fn
+  }
+}
+
+export function reduxGetState () {
+  return {
+    type: 'reduxGetState'
+  }
+}
