@@ -36,7 +36,7 @@ function OutputSuccess ({ output }) {
   const [description, payload] = output; //  eslint-disable-line
   return (
     <div className="Output output-success">
-      <p>Success!</p>
+      <p>Success! Use the navigation above to go to the next challenge.</p>
     </div>
   );
 }
