@@ -21,13 +21,27 @@ class Code extends Component {
     const { challenge } = challenges;
 
     return (
-      <div className="Code" onKeyDown={this.runOnCmdEnter.bind(this)}>
-        {/*<StaticCode />*/}
-        <p>{challenge.description}</p>
-        <CodeMirror value={code.src} onChange={setCode} />
-        <CodeMirror value={challenge.suiteDisplay} />
-        <a onClick={() => runCode(challenge.code)}>Run</a>
-        <a onClick={() => setCode(challenge.answer)}>Show Answer</a>
+      <div className="Code col-12 mb-2" onKeyDown={this.runOnCmdEnter.bind(this)}>
+      { /*<StaticCode /> */ }
+        <div className="row">
+          <p className="col-12">{challenge.description}</p>
+        </div>
+        <div className="row mb-2">
+          <div className="col-5">
+            <h2 className="h5">Code</h2>
+            <CodeMirror value={code.src} onChange={setCode} />
+          </div>
+          <div className="col-7">
+            <h2 className="h5">Spec</h2>
+            <CodeMirror value={challenge.suiteDisplay} />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12">
+            <a onClick={() => runCode(code.src)} className="btn btn-outline-success mr-1 my-2 my-sm-0">Run Code</a>
+            <a onClick={() => setCode(challenge.answer)} className="btn btn-outline-danger my-2 my-sm-0">See Answer</a>
+          </div>
+        </div>
       </div>
     );
   }

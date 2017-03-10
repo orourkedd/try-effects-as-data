@@ -9,10 +9,18 @@ class App extends Component {
     const { actions, code, challenges } = this.props;
 
     return (
-      <div className="App">
-        <ChallengeMenu actions={actions} />
-        <Code actions={actions} code={code} challenges={challenges} />
-        <Output code={code} />
+      <div className="App container-fluid">
+        <ChallengeMenu actions={actions} challenges={challenges} />
+        <div className="container-fluid">
+          <div className="row">
+            <Code actions={actions} code={code} challenges={challenges} />
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <Output code={code} />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

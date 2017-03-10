@@ -6,6 +6,7 @@
     "react-scripts": "0.9.4"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
     "effects-as-data": "^1.9.9",
     "ramda": "^0.23.0",
     "react": "^15.4.2",

@@ -3,18 +3,26 @@ import './ChallengeMenu.css';
 
 class ChallengeMenu extends Component {
   render() {
-    const { actions } = this.props;
+    const { actions, challenges } = this.props;
+    const { challenge } = challenges;
+
+    const list = ['one', 'two', 'three', 'four', 'five', 'six', 'seven'];
 
     return (
-      <div className="ChallengeMenu">
-        <a onClick={() => actions.loadChallenge('one')}>One</a>
-        <a onClick={() => actions.loadChallenge('two')}>Two</a>
-        <a onClick={() => actions.loadChallenge('three')}>Three</a>
-        <a onClick={() => actions.loadChallenge('four')}>Four</a>
-        <a onClick={() => actions.loadChallenge('five')}>Five</a>
-        <a onClick={() => actions.loadChallenge('six')}>Six</a>
-        <a onClick={() => actions.loadChallenge('seven')}>Seven</a>
-      </div>
+      <nav className="ChallengeMenu row navbar navbar-light bg-faded navbar-toggleable-md mb-4">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <span className="nav-link">Challenges:</span>
+          </li>
+          {list.map((name) => {
+            return (
+              <li className="nav-item">
+                <a className={`nav-link ${challenge.key === name ? 'active' : ''}`} onClick={() => actions.loadChallenge(name)}>{ name }</a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     );
   }
 }

@@ -22,7 +22,7 @@ const answer = `function * challengeSeven ({ username }) {
   return profile2;
 }`;
 
-const suiteDisplay = `test('It should return a getProfile failure', testIt(challengeSeven, () => {
+const suiteDisplay = `test('It should return a setProfile failure', testIt(challengeSeven, () => {
   const profileFromLocalStorage = {
     username: 'foo',
     age: 30,
@@ -72,7 +72,7 @@ const suite = (fn) => {
       [failure('Failed to write to local storage.'), failure('Failed to write to local storage.')]
     ];
   });
-  const t1 = ['It should return a getProfile failure', s1];
+  const t1 = ['It should return a setProfile failure', s1];
 
   return [t1];
 }

@@ -2,8 +2,14 @@
   text-align: left;
 }
 
+.CodeMirror {
+  /*border: 1px solid #eee;*/
+  height: auto !important;
+  padding: 5px;
+}
+
 .static-imports {
-  padding: 0 14px;
+  /*padding: 0 14px;*/
   margin: 0;
 }
 

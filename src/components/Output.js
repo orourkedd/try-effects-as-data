@@ -10,10 +10,10 @@ class Output extends Component {
     const OutputComponent = isFailure(output) ? OutputFailure : OutputSuccess;
 
     return (
-      <div>
-        <h1>Output</h1>
+      <section>
+        <h1 className="h5">Spec Output</h1>
         <OutputComponent output={output} />
-      </div>
+      </section>
     );
   }
 }
@@ -29,7 +29,6 @@ function OutputFailure ({ output }) {
 }
 
 function OutputSuccess ({ output }) {
-  console.log(output)
   const formatted = JSON.stringify(output.payload, true, 2);
   return (
     <div className="Output output-success">
