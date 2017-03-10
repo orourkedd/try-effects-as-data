@@ -7,9 +7,11 @@ const initialState = {
 function challenges (state = initialState, action = {}) {
   switch (action.type) {
     case 'setChallenge':
-    return merge(state, { challenge: action.challenge });
+      return merge(state, { challenge: action.challenge });
+
+    default:
+      return state;
   }
-  return state;
 }
 
 export default challenges;

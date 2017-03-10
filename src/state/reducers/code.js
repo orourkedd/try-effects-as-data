@@ -19,8 +19,10 @@ function code (state = initialState, action = {}) {
 
     case 'setOutput':
       return merge(state, { output: action.output });
+
+    default:
+      return state;
   }
-  return state;
 }
 
 export default code;

@@ -1,5 +1,4 @@
 import { testIt } from 'effects-as-data/test';
-import { success } from 'effects-as-data';
 
 const key = 'three';
 

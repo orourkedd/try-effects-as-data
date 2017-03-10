@@ -6,7 +6,6 @@ import { Provider } from 'react-redux'
 import App from './state/containers/App';
 import localStore from 'store';
 import users from './seed/users';
-import actions from './state/actions';
 import createStore from './state/store';
 import buildFunctions from './effects';
 

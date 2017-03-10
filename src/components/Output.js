@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Code from './Code';
 import './Output.css';
 import { isFailure } from 'effects-as-data';
 
@@ -7,7 +6,6 @@ class Output extends Component {
   render() {
     const { code } = this.props;
     const { output } = code;
-    const OutputComponent = isFailure(output) ? OutputFailure : OutputSuccess;
     const outputList = output.payload || [];
     return (
       <section>
@@ -21,7 +19,7 @@ class Output extends Component {
 }
 
 function OutputFailure ({ output }) {
-  const [description, theFailure] = output;
+  const [description, theFailure] = output; //  eslint-disable-line
 
   const message1 = theFailure.error.message;
   const message2 = message1.replace(' deepEqual ', ' does not equal: ');
@@ -35,7 +33,7 @@ function OutputFailure ({ output }) {
 }
 
 function OutputSuccess ({ output }) {
-  const [description, payload] = output;
+  const [description, payload] = output; //  eslint-disable-line
   return (
     <div className="Output output-success">
       <p>Success!</p>

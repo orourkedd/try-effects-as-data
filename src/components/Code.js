@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CodeMirror from 'react-codemirror';
-import StaticCode from './StaticCode';
+// import StaticCode from './StaticCode';
 import './Code.css';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
@@ -12,7 +12,7 @@ class Code extends Component {
     const { code } = this.props;
 
     if (e.which === 13 && e.metaKey) {
-      this.props.actions.runCode(code.src);
+      runCode(code.src);
     }
   }
 

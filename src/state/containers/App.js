@@ -2,7 +2,6 @@ import { mergeAll } from 'ramda';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import App from '../../components/App';
-import { runCode } from '../../effects/functions/code';
 import reduxActions from '../actions';
 import buildFunctions from '../../effects';
 
