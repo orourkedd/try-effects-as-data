@@ -8,4 +8,6 @@ export function * loadChallenge (challengeName) {
   yield reduxDispatch(setChallengeReduxAction);
   const setCodeReduxAction = redux.setCode(challenge.code);
   yield reduxDispatch(setCodeReduxAction);
+  const setOutputReduxAction = redux.setOutput([]);
+  yield reduxDispatch(setOutputReduxAction);
 }

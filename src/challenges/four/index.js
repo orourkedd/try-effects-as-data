@@ -3,10 +3,13 @@ import { success } from 'effects-as-data';
 
 const key = 'four';
 
-const description = "Write profile back to local storage and then return it.";
+const description = "Write the updated profile back to local storage and then return the updated profile.  Use the `setLocal` action (see the spec).";
 
 const code = `function * challengeFour ({ username }) {
-  const profileResult = yield { type: 'getLocal', key: \`profile:\${username}\` };
+  const profileResult = yield {
+    type: 'getLocal',
+    key: \`profile:\${username}\`
+  };
   const profile = profileResult.payload;
   const profile2 = merge(profile, {
     fullName: \`\${profile.firstName} \${profile.lastName}\`
@@ -15,12 +18,19 @@ const code = `function * challengeFour ({ username }) {
 }`;
 
 const answer = `function * challengeFour ({ username }) {
-  const profileResult = yield { type: 'getLocal', key: \`profile:\${username}\` };
+  const profileResult = yield {
+    type: 'getLocal',
+    key: \`profile:\${username}\`
+  };
   const profile = profileResult.payload;
   const profile2 = merge(profile, {
     fullName: \`\${profile.firstName} \${profile.lastName}\`
   });
-  yield { type: 'setLocal', key: \`profile:\${username}\`, payload: profile2 };
+  yield {
+    type: 'setLocal',
+    key: \`profile:\${username}\`,
+    payload: profile2
+  };
   return profile2;
 }`;
 

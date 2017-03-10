@@ -3,7 +3,7 @@ import { failure } from 'effects-as-data';
 
 const key = 'seven';
 
-const description = "Handling failure continued";
+const description = "Let's also handle the failure from `setProfile`:";
 
 const code = `function * challengeSeven ({ username }) {
   const profile1 = yield getProfile(username);

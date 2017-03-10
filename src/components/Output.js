@@ -8,31 +8,37 @@ class Output extends Component {
     const { code } = this.props;
     const { output } = code;
     const OutputComponent = isFailure(output) ? OutputFailure : OutputSuccess;
-
+    const outputList = output.payload || [];
     return (
       <section>
-        <h1 className="h5">Spec Output</h1>
-        <OutputComponent output={output} />
+        {outputList.map((output) => {
+          const OutputComponent = isFailure(output[1]) ? OutputFailure : OutputSuccess;
+          return <OutputComponent key={output[0]} output={output} />;
+        })}
       </section>
     );
   }
 }
 
 function OutputFailure ({ output }) {
+  const [description, theFailure] = output;
+
+  const message1 = theFailure.error.message;
+  const message2 = message1.replace(' deepEqual ', ' does not equal: ');
+
   return (
     <div className="Output output-failure">
-      <pre>
-      { output.error.message }
-      </pre>
+      <p>{ theFailure.error.name }</p>
+      <pre>{ message2 }</pre>
     </div>
   );
 }
 
 function OutputSuccess ({ output }) {
-  const formatted = JSON.stringify(output.payload, true, 2);
+  const [description, payload] = output;
   return (
     <div className="Output output-success">
-      <pre>{ formatted }</pre>
+      <p>Success!</p>
     </div>
   );
 }

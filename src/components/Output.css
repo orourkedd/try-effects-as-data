@@ -1,8 +1,21 @@
 .Output.output-success {
-
+  background-color: green;
+  color: #fff;
+  padding: 15px;
 }
 
 .Output.output-failure {
   background-color: red;
   color: #fff;
+  padding: 15px;
+}
+
+.Output.output-failure pre {
+  color: #fff;
+}
+
+.Output.output-success p,
+.Output.output-failure p,
+.Output.output-failure pre {
+  margin-bottom: 0;
 }

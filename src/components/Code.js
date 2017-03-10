@@ -4,6 +4,7 @@ import StaticCode from './StaticCode';
 import './Code.css';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
+import marked from 'marked';
 
 class Code extends Component {
   runOnCmdEnter (e) {
@@ -20,11 +21,13 @@ class Code extends Component {
     const { challenges, code } = this.props;
     const { challenge } = challenges;
 
+    const description = marked(challenge.description || '');
+
     return (
       <div className="Code col-12 mb-2" onKeyDown={this.runOnCmdEnter.bind(this)}>
       { /*<StaticCode /> */ }
         <div className="row">
-          <p className="col-12">{challenge.description}</p>
+          <p className="col-12" dangerouslySetInnerHTML={{ __html: description }} />
         </div>
         <div className="row mb-2">
           <div className="col-5">

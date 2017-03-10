@@ -8,6 +8,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "effects-as-data": "^1.9.9",
+    "marked": "^0.3.6",
     "ramda": "^0.23.0",
     "react": "^15.4.2",
     "react-codemirror": "^0.3.0",

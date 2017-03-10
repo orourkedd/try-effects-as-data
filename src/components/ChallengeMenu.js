@@ -16,7 +16,7 @@ class ChallengeMenu extends Component {
           </li>
           {list.map((name) => {
             return (
-              <li className="nav-item">
+              <li key={name} className="nav-item">
                 <a className={`nav-link ${challenge.key === name ? 'active' : ''}`} onClick={() => actions.loadChallenge(name)}>{ name }</a>
               </li>
             );

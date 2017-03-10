@@ -3,15 +3,21 @@ import { success } from 'effects-as-data';
 
 const key = 'three';
 
-const description = "Add a `fullName` field to the profile before it is returned.";
+const description = "Add a `fullName` field to the profile before it is returned.  The `fullName` field should be a value composed of `firstName` and `lastName` with a space between.  You have access to ramda's `merge()` function for this challenge so you don't have to mutate `profile`.";
 
 const code = `function * challengeThree ({ username }) {
-  const profile = yield { type: 'getLocal', key: \`profile:\${username}\` };
+  const profile = yield {
+    type: 'getLocal',
+    key: \`profile:\${username}\`
+  };
   return profile.payload;
 }`;
 
 const answer = `function * challengeThree ({ username }) {
-  const profileResult = yield { type: 'getLocal', key: \`profile:\${username}\` };
+  const profileResult = yield {
+    type: 'getLocal',
+    key: \`profile:\${username}\`
+  };
   const profile = profileResult.payload;
   const profile2 = merge(profile, {
     fullName: \`\${profile.firstName} \${profile.lastName}\`

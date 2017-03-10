@@ -3,7 +3,7 @@ import { success } from 'effects-as-data';
 
 const key = 'five';
 
-const description = "Let's do some refactoring.  The code below is does exactly the same thing but is using pure function helpers instead of creating inline JSON objects.";
+const description = "Let's do some refactoring.  The code below does exactly the same thing but is using pure function helpers instead of creating inline JSON objects.  The spec should pass without an additional work; it is here to demonstate a best-practice for working with actions.";
 
 const code = `function * challengeFive ({ username }) {
   const profile1 = yield getProfile(username);
